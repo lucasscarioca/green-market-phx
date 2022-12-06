@@ -36,8 +36,8 @@
 
 ### Como administrador, eu quero
 
-1.Ver clientes.
+1. Ver clientes.
 
-2.Incluir, alterar e excluir produtos
+2. Incluir, alterar e excluir produtos
 
-3.Ver o total de ordens por dia, por mês.
+3. Ver o total de ordens por dia, por mês.
