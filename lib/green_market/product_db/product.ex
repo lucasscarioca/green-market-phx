@@ -15,7 +15,7 @@ defmodule GreenMarket.ProductDB.Product do
   @doc false
   def changeset(product, attrs) do
     product
-    |> cast(attrs, [:name, :image, :quantity, :price])
-    |> validate_required([:name, :image, :quantity, :price])
+    |> cast(attrs, [:name, :image, :quantity, :price, :category_id])
+    |> validate_required([:name, :image, :quantity, :price, :category_id])
   end
 end

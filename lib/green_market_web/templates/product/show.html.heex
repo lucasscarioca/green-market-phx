@@ -22,6 +22,11 @@
     <%= @product.price %>
   </li>
 
+  <li>
+    <strong>Category:</strong>
+    <%= @category_name %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.product_path(@conn, :edit, @product) %></span> |

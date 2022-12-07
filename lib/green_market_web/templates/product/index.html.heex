@@ -5,6 +5,7 @@
     <tr>
       <th>Image</th>
       <th>Name</th>
+      <th>Category</th>
       <th>Quantity</th>
       <th>Price</th>
 
@@ -16,6 +17,11 @@
     <tr>
       <td><img src={product.image} alt="Product image" height="100" width="200"></td>
       <td><%= product.name %></td>
+      <%= for category <- @categories do %>
+        <%= if category.id == product.category_id do %>
+          <td><%= category.name %></td>
+        <% end %>
+    <% end %>
       <td><%= product.quantity %></td>
       <td>R$ <%= product.price %></td>
 

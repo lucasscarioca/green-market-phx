@@ -6,7 +6,8 @@ defmodule GreenMarketWeb.ProductController do
 
   def index(conn, _params) do
     products = ProductDB.list_products()
-    render(conn, "index.html", products: products)
+    categories = ProductDB.list_categories()
+    render(conn, "index.html", products: products, categories: categories)
   end
 
   def new(conn, _params) do
@@ -29,13 +30,16 @@ defmodule GreenMarketWeb.ProductController do
 
   def show(conn, %{"id" => id}) do
     product = ProductDB.get_product!(id)
-    render(conn, "show.html", product: product)
+    category_id = product.category_id
+    category_name = ProductDB.get_category!(category_id).name
+    render(conn, "show.html", product: product, category_name: category_name)
   end
 
   def edit(conn, %{"id" => id}) do
     product = ProductDB.get_product!(id)
+    categories = ProductDB.list_categories()
     changeset = ProductDB.change_product(product)
-    render(conn, "edit.html", product: product, changeset: changeset)
+    render(conn, "edit.html", product: product, changeset: changeset, categories: categories)
   end
 
   def update(conn, %{"id" => id, "product" => product_params}) do
