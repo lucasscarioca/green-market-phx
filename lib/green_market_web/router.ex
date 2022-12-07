@@ -28,6 +28,7 @@ defmodule GreenMarketWeb.Router do
     get "/", PageController, :index
     resources "/product", ProductController
     resources "/category", CategoryController
+    resources "/orders", OrderController
   end
 
   # Other scopes may use custom stacks.
